@@ -64,12 +64,16 @@ function DiningPreferences({ formData, updateFormData }) {
   }, [formData.dietaryRestrictions]);
 
   return (
-    <div>
+    <div className="dining-preferences">
       <h2>Dining Preferences</h2>
 
-      <div>
-        <label>Meal Plan:</label>
-        <select value={formData.mealPlan} onChange={handleMealPlanChange}>
+      <div className="meal-plan-section">
+        <label className="form-label">Meal Plan:</label>
+        <select
+          value={formData.mealPlan}
+          onChange={handleMealPlanChange}
+          className="form-select"
+        >
           {mealPlans.map((plan) => (
             <option key={plan} value={plan}>
               {plan}
@@ -78,10 +82,10 @@ function DiningPreferences({ formData, updateFormData }) {
         </select>
       </div>
 
-      <div>
-        <label>Dietary Restrictions:</label>
+      <div className="dietary-restrictions-section">
+        <label className="form-label">Dietary Restrictions:</label>
         {dietaryRestrictionsOptions.map((restriction) => (
-          <div key={restriction}>
+          <div key={restriction} className="restriction-option">
             <label>
               <input
                 type="checkbox"
@@ -89,6 +93,7 @@ function DiningPreferences({ formData, updateFormData }) {
                 onChange={(e) =>
                   handleDietaryRestrictionChange(restriction, e.target.checked)
                 }
+                className="form-checkbox"
               />
               {restriction}
             </label>
@@ -97,9 +102,9 @@ function DiningPreferences({ formData, updateFormData }) {
       </div>
 
       {availableDiningOptions.length > 0 && (
-        <div>
+        <div className="available-options-section">
           <h3>Available Dining Options:</h3>
-          <ul>
+          <ul className="options-list">
             {availableDiningOptions.map((option) => (
               <li key={option}>{option}</li>
             ))}

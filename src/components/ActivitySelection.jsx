@@ -55,11 +55,11 @@ function ActivitySelection({ formData, updateFormData }) {
   }, [selectedActivities, activityLevels]);
 
   return (
-    <div>
+    <div className="activity-selection">
       <h2>Select Activities</h2>
 
       {getAvailableActivities().map((activity) => (
-        <div key={activity}>
+        <div key={activity} className="activity-item">
           <label>
             <input
               type="checkbox"
@@ -71,9 +71,10 @@ function ActivitySelection({ formData, updateFormData }) {
 
           {activity === "Adventure Activities" &&
             selectedActivities.includes(activity) && (
-              <div>
+              <div className="activity-level">
                 <label>Difficulty Level:</label>
                 <select
+                  className="form-select"
                   value={activityLevels[activity] || ""}
                   onChange={(e) =>
                     handleActivityLevelChange(activity, e.target.value)
@@ -91,11 +92,12 @@ function ActivitySelection({ formData, updateFormData }) {
 
       {/* Additional dynamic inputs based on activity selection */}
       {selectedActivities.map((activity) => (
-        <div key={activity}>
+        <div key={activity} className="time-preference">
           <label>
             Preferred time of day for {activity}:
             <input
               type="text"
+              className="form-input"
               placeholder="e.g., Morning, Afternoon"
               onChange={(e) =>
                 updateFormData(`${activity}_timePreference`, e.target.value)

@@ -36,35 +36,37 @@ const BudgetAndPayment = ({ formData, updateFormData }) => {
   };
 
   return (
-    <div>
-      <h2>Budget and Payment Options</h2>
-      <div>
-        <label>Budget Range:</label>
+    <div className="budget-payment">
+      <h2 className="section-title">Budget and Payment Options</h2>
+      <div className="budget-range">
+        <label className="form-label">Budget Range:</label>
         <input
           type="range"
           min="100"
           max="5000"
           value={budget}
           onChange={(e) => setBudget(e.target.value)}
+          className="budget-range-input"
         />
-        <span>{budget}</span>
+        <span className="budget-value">${budget}</span>
       </div>
-      <div>
-        <label>Payment Plan:</label>
+      <div className="payment-plan">
+        <label className="form-label">Payment Plan:</label>
         <select
           value={paymentPlan}
           onChange={(e) => setPaymentPlan(e.target.value)}
+          className="payment-plan-select"
         >
           <option value="Full Payment">Full Payment</option>
           <option value="Installments">Installments</option>
         </select>
       </div>
       {paymentPlan === "Installments" && paymentBreakdown && (
-        <div>
-          <h3>Payment Breakdown:</h3>
+        <div className="payment-breakdown">
+          <h3 className="breakdown-title">Payment Breakdown:</h3>
           <p>Total Cost: ${paymentBreakdown.totalCost}</p>
           <p>Amount per Installment: ${paymentBreakdown.installmentAmount}</p>
-          <ul>
+          <ul className="due-dates-list">
             {paymentBreakdown.dueDates.map((date, index) => (
               <li key={index}>
                 Installment {index + 1}: Due on {date}
@@ -73,11 +75,12 @@ const BudgetAndPayment = ({ formData, updateFormData }) => {
           </ul>
         </div>
       )}
-      <div>
-        <label>Preferred Payment Method:</label>
+      <div className="payment-method">
+        <label className="form-label">Preferred Payment Method:</label>
         <select
           value={paymentMethod}
           onChange={(e) => setPaymentMethod(e.target.value)}
+          className="payment-method-select"
         >
           <option value="Credit Card">Credit Card</option>
           <option value="PayPal">PayPal</option>

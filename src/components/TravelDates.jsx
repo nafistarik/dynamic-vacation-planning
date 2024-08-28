@@ -49,7 +49,7 @@ function TravelDates({ formData, updateFormData }) {
   }, [formData.startDate, formData.endDate, dateError]);
 
   return (
-    <div>
+    <div className="travel-dates">
       <h2>Select Your Travel Dates</h2>
 
       <div>
@@ -70,7 +70,7 @@ function TravelDates({ formData, updateFormData }) {
         />
       </div>
 
-      {dateError && <div style={{ color: "red" }}>{dateError}</div>}
+      {dateError && <div className="error-message">{dateError}</div>}
     </div>
   );
 }

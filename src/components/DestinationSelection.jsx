@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 
 function DestinationSelection({ formData, updateFormData }) {
-  // Local state to manage multi-destination logic
   const [additionalDestinations, setAdditionalDestinations] = useState([]);
 
-  // Handle change in the main destination dropdown
   const handleDestinationChange = (e) => {
     const value = e.target.value;
     updateFormData("selectedDestination", value);
 
-    // Reset additional destinations if multi-destination is not selected
     if (value !== "Multi-Destination") {
       setAdditionalDestinations([]);
       updateFormData("multiDestination", false);
     }
   };
 
-  // Handle multi-destination toggle
   const handleAddDestination = () => {
     setAdditionalDestinations([
       ...additionalDestinations,
@@ -25,7 +21,6 @@ function DestinationSelection({ formData, updateFormData }) {
     updateFormData("multiDestination", true);
   };
 
-  // Handle changes in additional destinations
   const handleAdditionalDestinationChange = (index, key, value) => {
     const updatedDestinations = additionalDestinations.map((destination, i) =>
       i === index ? { ...destination, [key]: value } : destination
@@ -35,14 +30,15 @@ function DestinationSelection({ formData, updateFormData }) {
   };
 
   return (
-    <div>
+    <div className="personal-info">
       <h2>Select Your Destination</h2>
 
-      <div>
+      <div className="form-group">
         <label>Destination:</label>
         <select
           value={formData.selectedDestination}
           onChange={handleDestinationChange}
+          className="form-control"
         >
           <option value="">Select a destination</option>
           <option value="Paris">Paris</option>
@@ -54,15 +50,19 @@ function DestinationSelection({ formData, updateFormData }) {
 
       {formData.selectedDestination === "Multi-Destination" && (
         <>
-          <button type="button" onClick={handleAddDestination}>
+          <button
+            type="button"
+            onClick={handleAddDestination}
+            className="btn-add-destination"
+          >
             Add Destination
           </button>
 
           {additionalDestinations.map((destination, index) => (
-            <div key={index}>
+            <div key={index} className="destination-details">
               <h3>Destination {index + 1}</h3>
 
-              <div>
+              <div className="form-group">
                 <label>Destination:</label>
                 <input
                   type="text"
@@ -74,10 +74,11 @@ function DestinationSelection({ formData, updateFormData }) {
                       e.target.value
                     )
                   }
+                  className="form-control"
                 />
               </div>
 
-              <div>
+              <div className="form-group">
                 <label>Start Date:</label>
                 <input
                   type="date"
@@ -89,10 +90,11 @@ function DestinationSelection({ formData, updateFormData }) {
                       e.target.value
                     )
                   }
+                  className="form-control"
                 />
               </div>
 
-              <div>
+              <div className="form-group">
                 <label>End Date:</label>
                 <input
                   type="date"
@@ -104,6 +106,7 @@ function DestinationSelection({ formData, updateFormData }) {
                       e.target.value
                     )
                   }
+                  className="form-control"
                 />
               </div>
             </div>

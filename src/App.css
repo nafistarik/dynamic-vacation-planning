@@ -1,38 +1,724 @@
+/* App Component style starts */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the App component takes up at least the full height of the viewport */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  flex: 1; /* This makes sure the main content grows to take up available space */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* App Component Style Ends */
+
+/* Header Component Style Starts */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 50px;
+  background-color: #0fd298;
+  z-index: 10;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  height: 80px; /* Adjust the size of the logo as needed */
+}
+
+.motto {
+  font-size: 1rem;
+  color: #303f35; /* Change to your preferred text color */
+  font-weight: 600;
+}
+
+/* Header Component Style Ends */
+
+/* Main Content Style Starts */
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 40px;
+  background: linear-gradient(180deg, #0fd298, #5cddb6);
+}
+/* Specific styles for PersonalInfo component */
+
+/* Common styles for form components */
+.personal-info {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
 }
 
-.App-link {
-  color: #61dafb;
+.personal-info h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
+
+.form-group label {
+  flex: 1; /* Label takes up as much space as needed */
+  margin-right: 10px; /* Space between label and input */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select {
+  flex: 2; /* Input and select take up the remaining space */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  box-sizing: border-box; /* Include padding and border in total width */
+  width: 100%; /* Make inputs and select fill the available width */
+  height: 30px; /* Set height of the input boxes */
+}
+
+.btn-add-destination {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3bad78;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style for the select element */
+.form-group select {
+  color: #333; /* Text color */
+  height: 50px; /* Set height of the select box */
+  font-size: 16px; /* Font size */
+}
+.form-group select option {
+  background: #5cddb6; /* Background color of dropdown items */
+  color: #333; /* Text color of dropdown items */
+}
+
+/* Style for the dropdown arrow */
+.form-group select::-ms-expand {
+  display: none; /* Hide default arrow for IE */
+}
+
+/* Custom arrow for select */
+.form-group select {
+  background-size: 20px 20px; /* Size of the custom arrow */
+}
+
+/* Style for the TravelDates component */
+.travel-dates {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+.travel-dates h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.travel-dates div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.travel-dates label {
+  flex: 1; /* Label takes up as much space as needed */
+  margin-right: 10px; /* Space between label and input */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+.travel-dates input[type="date"] {
+  flex: 2; /* Input takes up the remaining space */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  box-sizing: border-box; /* Include padding and border in total width */
+  width: 100%; /* Make inputs fill the available width */
+  height: 30px; /* Set height of the input boxes */
+}
+
+.travel-dates .error-message {
+  color: red; /* Color for error messages */
+  margin-top: 10px; /* Space above error message */
+}
+
+/* Styles for AccommodationPreferences component */
+
+/* Container for accommodation preferences */
+.accommodation-preferences {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Common styles for form components in AccommodationPreferences */
+.accommodation-preferences h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.accommodation-preferences .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.accommodation-preferences .form-group label {
+  flex: 1; /* Label takes up as much space as needed */
+  margin-right: 10px; /* Space between label and input */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+.accommodation-preferences .form-group input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and label text */
+}
+
+.accommodation-preferences .form-select {
+  flex: 2; /* Input and select take up the remaining space */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  box-sizing: border-box; /* Include padding and border in total width */
+  width: 100%; /* Make inputs and select fill the available width */
+  height: 50px; /* Set height of the select box */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+}
+
+.accommodation-preferences .form-select option {
+  background: #5cddb6; /* Background color of dropdown items */
+  color: #333; /* Text color of dropdown items */
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Styles for ActivitySelection component */
+
+/* Container for activity selection */
+.activity-selection {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Heading style */
+.activity-selection h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Style for each activity item */
+.activity-selection .activity-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* Style for activity level dropdown */
+.activity-selection .activity-level {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.activity-selection .form-select {
+  margin-left: 10px; /* Space between label and select */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  box-sizing: border-box; /* Include padding and border in total width */
+  width: 100%; /* Make select fill the available width */
+  height: 40px; /* Set height of the select box */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+}
+
+/* Style for time preference input */
+.activity-selection .time-preference {
+  margin-top: 15px;
+}
+
+.activity-selection .form-input {
+  margin-left: 10px; /* Space between label and input */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  width: calc(100% - 20px); /* Full width minus padding */
+  height: 40px; /* Set height of the input box */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+}
+
+/* Styles for TransportationOptions component */
+
+/* Container for transportation options */
+.transportation-options {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Heading style */
+.transportation-options h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Group of options */
+.option-group {
+  margin-bottom: 20px;
+}
+
+/* Style for option labels */
+.option-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Style for input elements */
+.form-input {
+  margin-left: 10px; /* Space between label and input */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  width: calc(100% - 20px); /* Full width minus padding */
+  height: 40px; /* Set height of the input box */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+}
+/* Styles for DiningPreferences component */
+
+/* Container for dining preferences */
+.dining-preferences {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Heading style */
+.dining-preferences h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Section for meal plan */
+.meal-plan-section {
+  margin-bottom: 20px;
+}
+
+/* Section for dietary restrictions */
+.dietary-restrictions-section {
+  margin-bottom: 20px;
+}
+
+/* Style for labels */
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Style for select elements */
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  height: 40px; /* Set height of the select box */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+}
+
+/* Style for checkbox inputs */
+.form-checkbox {
+  margin-right: 10px;
+}
+
+/* Style for each dietary restriction option */
+.restriction-option {
+  margin-bottom: 10px;
+}
+
+/* Section for available dining options */
+.available-options-section {
+  margin-top: 20px;
+}
+
+/* Style for the list of dining options */
+.options-list {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Style for list items */
+.options-list li {
+  margin-bottom: 5px;
+}
+
+/* Styles for SpecialRequests component */
+
+/* Container for special requests */
+.special-requests {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 10px 20px;
+  background: transparent; /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Heading style */
+.special-requests h2 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Section for special requests input */
+.special-requests-input {
+  margin-bottom: 20px;
+}
+
+/* Style for labels */
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Style for textarea */
+.form-textarea {
+  width: 95%;
+  height: 100px; /* Set a fixed height for the textarea */
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Slightly rounded corners */
+  background: transparent; /* Transparent background */
+  font-size: 16px; /* Font size */
+  color: #333; /* Text color */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Section for romantic options */
+.romantic-options {
+  margin-bottom: 20px;
+}
+
+/* Style for checkbox inputs */
+.form-checkbox {
+  margin-right: 10px;
+}
+
+/* Section for accessible options */
+.accessible-options {
+  margin-top: 20px;
+}
+
+/* Styles for BudgetAndPayment component */
+
+/* Container for budget and payment options */
+.budget-payment {
+  width: 100%;
+  max-width: 600px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 20px;
+  background: transparent; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Section title style */
+.section-title {
+  text-align: center; /* Center align the title */
+  margin-bottom: 20px;
+}
+
+/* Budget range input container */
+.budget-range {
+  margin-bottom: 20px;
+}
+
+/* Style for range input */
+.budget-range-input {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Style for budget value display */
+.budget-value {
+  display: block;
+  text-align: center; /* Center align the budget value */
+  font-size: 18px; /* Font size */
+}
+
+/* Payment plan section style */
+.payment-plan {
+  margin-bottom: 20px;
+}
+
+/* Style for payment plan select input */
+.payment-plan-select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  background: transparent; /* Transparent background */
+}
+
+/* Payment breakdown section style */
+.payment-breakdown {
+  margin-bottom: 20px;
+}
+
+/* Breakdown title style */
+.breakdown-title {
+  margin-bottom: 10px;
+}
+
+/* Style for due dates list */
+.due-dates-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Payment method section style */
+.payment-method {
+  margin-bottom: 20px;
+}
+
+/* Style for payment method select input */
+.payment-method-select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3bad78; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  background: transparent; /* Transparent background */
+}
+
+/* Style for labels */
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Styles for ReviewAndConfirm component */
+
+/* Container for review and confirm */
+.review-confirm {
+  width: 100%;
+  max-width: 800px; /* Set maximum width for the container */
+  margin: 0 auto; /* Center the component horizontally */
+  padding: 20px;
+  background: transparent; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
+}
+
+/* Section title style */
+.section-title {
+  text-align: center; /* Center align the title */
+  margin-bottom: 20px;
+}
+
+/* Section heading style */
+.section-heading {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Style for each review section */
+.review-section {
+  margin-bottom: 20px;
+}
+
+/* Terms acceptance style */
+.terms-acceptance {
+  margin-bottom: 20px;
+}
+
+/* Style for terms checkbox */
+.terms-checkbox {
+  margin-right: 10px;
+}
+
+/* Style for submit button */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3bad78; /* Button color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Style for submit button when disabled */
+.submit-button:disabled {
+  background-color: #c0c0c0; /* Disabled color */
+  cursor: not-allowed;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 30px 0 0;
+}
+
+/* General button style */
+.nav-button {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Back button style */
+.back-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Next button style */
+.next-button {
+  background-color: #3bad78; /* Green color */
+  color: #fff;
+  border: 2px solid #319b6f;
+}
+
+.next-button:hover {
+  background-color: #319b6f;
+}
+
+/* Submit button style */
+.submit-button {
+  background-color: #01ab84; /* Blue color */
+  color: #fff;
+  border: 1px solid #05beae;
+}
+
+.submit-button:hover {
+  background-color: #00b386;
+}
+
+/* Disabled button style */
+.nav-button:disabled {
+  background-color: #b6ffe7;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Footer Component Style Starts */
+
+.footer {
+  background-color: rgb(20, 32, 27, 0.8); /* Dark background color */
+  color: #fff; /* White text color */
+}
+
+.footer-content {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.footer a {
+  color: #86d0a6; /* Link color */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Component Style Ends */

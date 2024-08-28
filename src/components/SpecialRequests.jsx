@@ -26,20 +26,21 @@ function SpecialRequests({ formData, updateFormData }) {
   }, [showAccessibleOptions]);
 
   return (
-    <div>
+    <div className="special-requests">
       <h2>Special Requests</h2>
 
-      <div>
-        <label>Special Requests:</label>
+      <div className="special-requests-input">
+        <label className="form-label">Special Requests:</label>
         <textarea
           value={formData.specialRequests}
           onChange={handleSpecialRequestsChange}
           placeholder="e.g., Honeymoon Package, Accessible Room, etc."
+          className="form-textarea"
         />
       </div>
 
       {showRomanticOptions && (
-        <div>
+        <div className="romantic-options">
           <h3>Romantic Activities and Accommodations</h3>
           <label>
             <input
@@ -48,6 +49,7 @@ function SpecialRequests({ formData, updateFormData }) {
               onChange={(e) =>
                 updateFormData("romanticDinner", e.target.checked)
               }
+              className="form-checkbox"
             />
             Romantic Dinner
           </label>
@@ -57,6 +59,7 @@ function SpecialRequests({ formData, updateFormData }) {
               type="checkbox"
               checked={formData.couplesSpa}
               onChange={(e) => updateFormData("couplesSpa", e.target.checked)}
+              className="form-checkbox"
             />
             Couples Spa Package
           </label>
@@ -64,7 +67,7 @@ function SpecialRequests({ formData, updateFormData }) {
       )}
 
       {showAccessibleOptions && (
-        <div>
+        <div className="accessible-options">
           <h3>Accessible Accommodations</h3>
           <p>
             We will adjust the list of accommodations to show only accessible

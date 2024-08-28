@@ -61,12 +61,13 @@ function AccommodationPreferences({ formData, updateFormData }) {
   }, [formData.accommodationType, formData.selectedDestination]);
 
   return (
-    <div>
+    <div className="accommodation-preferences">
       <h2>Accommodation Preferences</h2>
 
-      <div>
+      <div className="form-group">
         <label>Accommodation Type:</label>
         <select
+          className="form-select"
           value={formData.accommodationType}
           onChange={handleAccommodationTypeChange}
         >
@@ -80,9 +81,10 @@ function AccommodationPreferences({ formData, updateFormData }) {
 
       {formData.accommodationType && (
         <>
-          <div>
+          <div className="form-group">
             <label>Star Rating:</label>
             <select
+              className="form-select"
               value={formData.starRating}
               onChange={handleStarRatingChange}
             >
@@ -95,9 +97,13 @@ function AccommodationPreferences({ formData, updateFormData }) {
             </select>
           </div>
 
-          <div>
+          <div className="form-group">
             <label>Room Type:</label>
-            <select value={formData.roomType} onChange={handleRoomTypeChange}>
+            <select
+              className="form-select"
+              value={formData.roomType}
+              onChange={handleRoomTypeChange}
+            >
               {getRoomOptions().map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -108,7 +114,7 @@ function AccommodationPreferences({ formData, updateFormData }) {
 
           {formData.accommodationType === "Hotel" && (
             <>
-              <div>
+              <div className="form-group">
                 <label>
                   <input
                     type="checkbox"
@@ -120,7 +126,7 @@ function AccommodationPreferences({ formData, updateFormData }) {
                 </label>
               </div>
 
-              <div>
+              <div className="form-group">
                 <label>
                   <input
                     type="checkbox"

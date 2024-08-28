@@ -53,11 +53,11 @@ function TransportationOptions({ formData, updateFormData }) {
   };
 
   return (
-    <div>
+    <div className="transportation-options">
       <h2>Transportation Options</h2>
 
-      <div>
-        <label>
+      <div className="option-group">
+        <label className="option-label">
           <input
             type="checkbox"
             checked={formData.flightBooking}
@@ -69,8 +69,8 @@ function TransportationOptions({ formData, updateFormData }) {
         </label>
 
         {formData.flightBooking && (
-          <>
-            <div>
+          <div className="flight-details">
+            <div className="form-group">
               <label>Departure City:</label>
               <input
                 type="text"
@@ -78,16 +78,18 @@ function TransportationOptions({ formData, updateFormData }) {
                 onChange={(e) =>
                   handleFlightDetailsChange("departureCity", e.target.value)
                 }
+                className="form-input"
               />
             </div>
 
-            <div>
+            <div className="form-group">
               <label>Class Preference:</label>
               <select
                 value={flightDetails.classPreference}
                 onChange={(e) =>
                   handleFlightDetailsChange("classPreference", e.target.value)
                 }
+                className="form-select"
               >
                 <option value="">Select Class</option>
                 <option value="Economy">Economy</option>
@@ -95,12 +97,12 @@ function TransportationOptions({ formData, updateFormData }) {
                 <option value="First Class">First Class</option>
               </select>
             </div>
-          </>
+          </div>
         )}
       </div>
 
-      <div>
-        <label>
+      <div className="option-group">
+        <label className="option-label">
           <input
             type="checkbox"
             checked={formData.carRental}
@@ -110,14 +112,15 @@ function TransportationOptions({ formData, updateFormData }) {
         </label>
 
         {formData.carRental && (
-          <>
-            <div>
+          <div className="car-rental-details">
+            <div className="form-group">
               <label>Car Type:</label>
               <select
                 value={carRentalDetails.carType}
                 onChange={(e) =>
                   handleCarRentalDetailsChange("carType", e.target.value)
                 }
+                className="form-select"
               >
                 <option value="">Select Car Type</option>
                 <option value="SUV">SUV</option>
@@ -126,7 +129,7 @@ function TransportationOptions({ formData, updateFormData }) {
               </select>
             </div>
 
-            <div>
+            <div className="form-group">
               <label>Rental Duration (days):</label>
               <input
                 type="number"
@@ -135,14 +138,15 @@ function TransportationOptions({ formData, updateFormData }) {
                   handleCarRentalDetailsChange("rentalDuration", e.target.value)
                 }
                 min="1"
+                className="form-input"
               />
             </div>
-          </>
+          </div>
         )}
       </div>
 
-      <div>
-        <label>
+      <div className="option-group">
+        <label className="option-label">
           <input
             type="checkbox"
             checked={formData.publicTransport}
@@ -154,9 +158,14 @@ function TransportationOptions({ formData, updateFormData }) {
         </label>
 
         {formData.publicTransport && (
-          <div>
+          <div className="public-transport-details">
             <label>Public Transport Option:</label>
-            <input type="text" value={getPublicTransportOptions()} readOnly />
+            <input
+              type="text"
+              value={getPublicTransportOptions()}
+              readOnly
+              className="form-input"
+            />
           </div>
         )}
       </div>

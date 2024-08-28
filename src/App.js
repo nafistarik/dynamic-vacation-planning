@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import './App.css';
+
 import AccommodationPreferences from './components/AccommodationPreferences';
 import ActivitySelection from './components/ActivitySelection';
 import BudgetAndPayment from './components/BudgetAndPayment';
 import DestinationSelection from './components/DestinationSelection';
 import DiningPreferences from './components/DiningPreferences';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import PersonalInfo from './components/PersonalInfo';
-import ReviewAndConfirm from './components/ReviewAndConfirm'; // Import the new component
+import ReviewAndConfirm from './components/ReviewAndConfirm';
 import SpecialRequests from './components/SpecialRequests';
 import TransportationOptions from './components/TransportationOptions';
 import TravelDates from './components/TravelDates';
-// import other components
 
 function App() {
   const [formData, setFormData] = useState({
@@ -74,27 +77,32 @@ function App() {
 
   return (
     <div className="App">
-      {step === 0 && <PersonalInfo formData={formData} updateFormData={updateFormData} />}
-      {step === 1 && <DestinationSelection formData={formData} updateFormData={updateFormData} />}
-      {step === 2 && <TravelDates formData={formData} updateFormData={updateFormData} />}
-      {step === 3 && <AccommodationPreferences formData={formData} updateFormData={updateFormData} />}
-      {step === 4 && <ActivitySelection formData={formData} updateFormData={updateFormData} />}
-      {step === 5 && <TransportationOptions formData={formData} updateFormData={updateFormData} />}
-      {step === 6 && <DiningPreferences formData={formData} updateFormData={updateFormData} />}
-      {step === 7 && <SpecialRequests formData={formData} updateFormData={updateFormData} />}
-      {step === 8 && <BudgetAndPayment formData={formData} updateFormData={updateFormData} />}
-      {step === 9 && <ReviewAndConfirm formData={formData} updateFormData={updateFormData} />}
-      
-      <div>
-        {step > 0 && <button onClick={handleBack}>Back</button>}
-        {step < 9 ? (
-          <button onClick={handleNext}>Next</button>
-        ) : (
-          <button onClick={handleSubmit}>Submit</button>
-        )}
-      </div>
+      <Header/>
+      <main className="content">
+        {step === 0 && <PersonalInfo formData={formData} updateFormData={updateFormData} />}
+        {step === 1 && <DestinationSelection formData={formData} updateFormData={updateFormData} />}
+        {step === 2 && <TravelDates formData={formData} updateFormData={updateFormData} />}
+        {step === 3 && <AccommodationPreferences formData={formData} updateFormData={updateFormData} />}
+        {step === 4 && <ActivitySelection formData={formData} updateFormData={updateFormData} />}
+        {step === 5 && <TransportationOptions formData={formData} updateFormData={updateFormData} />}
+        {step === 6 && <DiningPreferences formData={formData} updateFormData={updateFormData} />}
+        {step === 7 && <SpecialRequests formData={formData} updateFormData={updateFormData} />}
+        {step === 8 && <BudgetAndPayment formData={formData} updateFormData={updateFormData} />}
+        {step === 9 && <ReviewAndConfirm formData={formData} updateFormData={updateFormData} />}
+        
+        <div className="button-container">
+          {step > 0 && <button className="nav-button back-button" onClick={handleBack}>Back</button>}
+          {step < 9 ? (
+            <button className="nav-button next-button" onClick={handleNext}>Next</button>
+          ) : (
+            <button className="nav-button submit-button" onClick={handleSubmit}>Submit</button>
+          )}
+        </div>
+      </main>
+      <Footer/>
     </div>
   );
 }
 
 export default App;
+
