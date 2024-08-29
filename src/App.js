@@ -95,7 +95,8 @@ function App() {
           {step < 9 ? (
             <button className="nav-button next-button" onClick={handleNext}>Next</button>
           ) : (
-            <button className="nav-button submit-button" onClick={handleSubmit}>Submit</button>
+            // <button className="nav-button submit-button" onClick={handleSubmit}>Submit</button>
+            <></>
           )}
         </div>
       </main>

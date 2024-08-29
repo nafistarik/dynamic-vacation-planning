@@ -130,7 +130,7 @@ function TransportationOptions({ formData, updateFormData }) {
             </div>
 
             <div className="form-group">
-              <label>Rental Duration (days):</label>
+              <label>Rental Duration:</label>
               <input
                 type="number"
                 value={carRentalDetails.rentalDuration}
@@ -158,8 +158,8 @@ function TransportationOptions({ formData, updateFormData }) {
         </label>
 
         {formData.publicTransport && (
-          <div className="public-transport-details">
-            <label>Public Transport Option:</label>
+          <div className="public-transport-details form-group">
+            <label>Transport Option:</label>
             <input
               type="text"
               value={getPublicTransportOptions()}

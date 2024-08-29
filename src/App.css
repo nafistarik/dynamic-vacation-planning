@@ -4,6 +4,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  color: #002555;
 }
 
 .App {
@@ -25,9 +26,11 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 5px 50px;
-  background-color: #0fd298;
+  background-color: #64c9f3;
+
+  /* background: linear-gradient(90deg, #0fd298, #15dba0); */
   z-index: 10;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 .logo {
@@ -36,7 +39,7 @@ body {
 
 .motto {
   font-size: 1rem;
-  color: #303f35; /* Change to your preferred text color */
+  color: #21323d; /* Change to your preferred text color */
   font-weight: 600;
 }
 
@@ -50,17 +53,17 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background: linear-gradient(180deg, #0fd298, #5cddb6);
+  background: linear-gradient(180deg, #e9f6fb, #f9fdff);
 }
 /* Specific styles for PersonalInfo component */
 
 /* Common styles for form components */
 .personal-info {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -92,12 +95,12 @@ body {
 .form-group select {
   flex: 2; /* Input and select take up the remaining space */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgba(139, 150, 156, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   box-sizing: border-box; /* Include padding and border in total width */
   width: 100%; /* Make inputs and select fill the available width */
-  height: 30px; /* Set height of the input boxes */
+  height: 40px; /* Set height of the input boxes */
 }
 
 .btn-add-destination {
@@ -106,7 +109,7 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #3bad78;
+  background-color: #64c9f3;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
@@ -115,12 +118,16 @@ body {
 /* Style for the select element */
 .form-group select {
   color: #333; /* Text color */
-  height: 50px; /* Set height of the select box */
+  height: 40px; /* Set height of the select box */
   font-size: 16px; /* Font size */
 }
 .form-group select option {
-  background: #5cddb6; /* Background color of dropdown items */
+  background: transparent; /* Background color of dropdown items */
   color: #333; /* Text color of dropdown items */
+}
+
+.form-group select option:focus {
+  background-color: #64c9f3; /* Change background color on focus */
 }
 
 /* Style for the dropdown arrow */
@@ -136,10 +143,10 @@ body {
 /* Style for the TravelDates component */
 .travel-dates {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -167,12 +174,12 @@ body {
 .travel-dates input[type="date"] {
   flex: 2; /* Input takes up the remaining space */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   box-sizing: border-box; /* Include padding and border in total width */
   width: 100%; /* Make inputs fill the available width */
-  height: 30px; /* Set height of the input boxes */
+  height: 40px; /* Set height of the input boxes */
 }
 
 .travel-dates .error-message {
@@ -185,10 +192,10 @@ body {
 /* Container for accommodation preferences */
 .accommodation-preferences {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -221,18 +228,18 @@ body {
 .accommodation-preferences .form-select {
   flex: 2; /* Input and select take up the remaining space */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   box-sizing: border-box; /* Include padding and border in total width */
   width: 100%; /* Make inputs and select fill the available width */
-  height: 50px; /* Set height of the select box */
+  height: 40px; /* Set height of the select box */
   font-size: 16px; /* Font size */
   color: #333; /* Text color */
 }
 
 .accommodation-preferences .form-select option {
-  background: #5cddb6; /* Background color of dropdown items */
+  background: transparent; /* Background color of dropdown items */
   color: #333; /* Text color of dropdown items */
 }
 
@@ -248,10 +255,10 @@ body {
 /* Container for activity selection */
 .activity-selection {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -281,7 +288,7 @@ body {
 .activity-selection .form-select {
   margin-left: 10px; /* Space between label and select */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   box-sizing: border-box; /* Include padding and border in total width */
@@ -299,7 +306,7 @@ body {
 .activity-selection .form-input {
   margin-left: 10px; /* Space between label and input */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   width: calc(100% - 20px); /* Full width minus padding */
@@ -313,10 +320,10 @@ body {
 /* Container for transportation options */
 .transportation-options {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -343,9 +350,9 @@ body {
 
 /* Style for input elements */
 .form-input {
-  margin-left: 10px; /* Space between label and input */
+  /* margin-left: 10px; Space between label and input */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   width: calc(100% - 20px); /* Full width minus padding */
@@ -358,10 +365,10 @@ body {
 /* Container for dining preferences */
 .dining-preferences {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -395,7 +402,7 @@ body {
 .form-select {
   width: 100%;
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   height: 40px; /* Set height of the select box */
@@ -435,10 +442,10 @@ body {
 /* Container for special requests */
 .special-requests {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
-  padding: 10px 20px;
-  background: transparent; /* Transparent background */
+  padding: 20px;
+  background: white; /* Transparent background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -468,7 +475,7 @@ body {
   width: 95%;
   height: 100px; /* Set a fixed height for the textarea */
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Slightly rounded corners */
   background: transparent; /* Transparent background */
   font-size: 16px; /* Font size */
@@ -496,10 +503,10 @@ body {
 /* Container for budget and payment options */
 .budget-payment {
   width: 100%;
-  max-width: 600px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
   padding: 20px;
-  background: transparent; /* Background color */
+  background: white; /* Background color */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -538,7 +545,7 @@ body {
 .payment-plan-select {
   width: 100%;
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Rounded corners */
   background: transparent; /* Transparent background */
 }
@@ -568,7 +575,7 @@ body {
 .payment-method-select {
   width: 100%;
   padding: 10px;
-  border: 2px solid #3bad78; /* Border color */
+  border: 1.5px solid rgb(139, 156, 148, 0.5); /* Border color */
   border-radius: 4px; /* Rounded corners */
   background: transparent; /* Transparent background */
 }
@@ -585,10 +592,10 @@ body {
 /* Container for review and confirm */
 .review-confirm {
   width: 100%;
-  max-width: 800px; /* Set maximum width for the container */
+  max-width: 500px; /* Set maximum width for the container */
   margin: 0 auto; /* Center the component horizontally */
   padding: 20px;
-  background: transparent; /* Background color */
+  background: white; /* Background color */
   border-radius: 8px; /* Rounded corners */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; /* Light shadow */
@@ -621,24 +628,6 @@ body {
   margin-right: 10px;
 }
 
-/* Style for submit button */
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #3bad78; /* Button color */
-  color: #fff; /* Text color */
-  border: none;
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Style for submit button when disabled */
-.submit-button:disabled {
-  background-color: #c0c0c0; /* Disabled color */
-  cursor: not-allowed;
-}
-
 /* Button container */
 .button-container {
   display: flex;
@@ -654,46 +643,60 @@ body {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Back button style */
 .back-button {
-  background-color: #f5f5f5;
-  color: #333;
-  border: 1px solid #ddd;
+  background: transparent;
+  color: #092b80;
+  border: 1.5px solid rgb(25, 103, 210, 0.5);
 }
 
 .back-button:hover {
-  background-color: #e0e0e0;
+  background-color: #fff;
+  border: 1.5px solid #1967d2;
 }
 
 /* Next button style */
 .next-button {
-  background-color: #3bad78; /* Green color */
+  background-color: #649cec; /* Green color */
   color: #fff;
-  border: 2px solid #319b6f;
+  border: 1.5px solid #649cec;
 }
 
 .next-button:hover {
-  background-color: #319b6f;
+  background-color: #1967d2;
+  border: 1.5px solid #1967d2;
 }
 
-/* Submit button style */
+/* Style for submit button */
 .submit-button {
-  background-color: #01ab84; /* Blue color */
-  color: #fff;
-  border: 1px solid #05beae;
+  width: 100%;
+  padding: 10px;
+  background-color: #64c9f3; /* Blue color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Style for submit button when disabled */
+.submit-button:disabled {
+  background-color: #c0c0c0; /* Disabled color */
+  cursor: not-allowed;
 }
 
 .submit-button:hover {
-  background-color: #00b386;
+  background-color: #1967d2;
 }
 
 /* Disabled button style */
 .nav-button:disabled {
-  background-color: #b6ffe7;
-  color: #666;
+  background-color: #b6d4ff;
+  color: #6a6b6c;
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -701,7 +704,7 @@ body {
 /* Footer Component Style Starts */
 
 .footer {
-  background-color: rgb(20, 32, 27, 0.8); /* Dark background color */
+  background-color: rgba(20, 28, 32, 0.8); /* Dark background color */
   color: #fff; /* White text color */
 }
 
@@ -713,7 +716,7 @@ body {
 }
 
 .footer a {
-  color: #86d0a6; /* Link color */
+  color: #64c9f3; /* Link color */
   text-decoration: none;
 }
 
@@ -722,3 +725,22 @@ body {
 }
 
 /* Footer Component Style Ends */
+
+/* Custom Scrollbar design starts*/
+
+html::-webkit-scrollbar {
+  width: 14px;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: rgba(83, 137, 179, 0.4);
+  border-radius: 12px;
+  border: 3px solid transparent;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(83, 137, 179, 0.5);
+}
+
+/* Custom Scrollbar design ends*/

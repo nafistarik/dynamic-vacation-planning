@@ -71,7 +71,14 @@ function ActivitySelection({ formData, updateFormData }) {
 
           {activity === "Adventure Activities" &&
             selectedActivities.includes(activity) && (
-              <div className="activity-level">
+              <div
+                className="activity-level"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: 0,
+                  width: "60%",
+                }}
+              >
                 <label>Difficulty Level:</label>
                 <select
                   className="form-select"
@@ -92,18 +99,16 @@ function ActivitySelection({ formData, updateFormData }) {
 
       {/* Additional dynamic inputs based on activity selection */}
       {selectedActivities.map((activity) => (
-        <div key={activity} className="time-preference">
-          <label>
-            Preferred time of day for {activity}:
-            <input
-              type="text"
-              className="form-input"
-              placeholder="e.g., Morning, Afternoon"
-              onChange={(e) =>
-                updateFormData(`${activity}_timePreference`, e.target.value)
-              }
-            />
-          </label>
+        <div key={activity} className="time-preference form-group">
+          <label>Preferred time for {activity}:</label>
+          <input
+            type="text"
+            className="form-input"
+            placeholder="e.g., Morning, Afternoon"
+            onChange={(e) =>
+              updateFormData(`${activity}_timePreference`, e.target.value)
+            }
+          />
         </div>
       ))}
     </div>

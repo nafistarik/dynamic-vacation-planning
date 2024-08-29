@@ -65,7 +65,7 @@ function AccommodationPreferences({ formData, updateFormData }) {
       <h2>Accommodation Preferences</h2>
 
       <div className="form-group">
-        <label>Accommodation Type:</label>
+        <label>Type:</label>
         <select
           className="form-select"
           value={formData.accommodationType}
